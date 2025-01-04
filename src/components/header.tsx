@@ -63,6 +63,8 @@ export default function Header() {
     const [open, setOpen] = useState(false)
     const [dropdownOpen, setDropdownOpen] = useState(false)
 
+    // 获取当前域名 
+    const domain = window.location.hostname;
     const navigate = useNavigate()
 
     // @ts-expect-error DisableAnimatedMan is a global variable
@@ -150,7 +152,7 @@ export default function Header() {
                                             <DropdownMenuItem
                                                 onClick={() => {
                                                     setDropdownOpen(false)
-                                                    navigate("/")
+                                                    navigate({domain})
                                                 }}
                                                 className="cursor-pointer"
                                             >
